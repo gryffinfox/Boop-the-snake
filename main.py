@@ -1,4 +1,6 @@
 import random
+import sys
+
 all_snakes = []
 
 class Player:
@@ -23,7 +25,7 @@ class Player:
 
     def save_score(self, username, points):
         with open('highscore.txt', 'a') as file:
-            content = file.write(username, points)
+            content = file.write(username.name, points)
 
 class Snake:
     def __init__(self):
@@ -37,7 +39,7 @@ class Snake:
 
     def react(self, player):
         random_reaction = random.choices(self.reactions, self.reaction_matrix)[0]
-        getattr(self, random_reaction)
+        getattr(self, random_reaction)(player)
 
     def bite(self, player):
         if self.venomous:
@@ -54,9 +56,11 @@ class Snake:
     def hiss(self, player):
         player.suffer(1)
         player.add_score(5)
+        print('Snake hissed at you! You gained 5 points and lost 1 HP.')
 
     def coil(self, player):
         player.add_score(10)
+        print('Snake coiled! You gained 10 points.')
 
 class Viper(Snake):
     def __init__(self, looks, species, codex_entry = []):
@@ -141,20 +145,35 @@ if level == 1:
 counter = 0
 stopper = True
 for snake in generated_snakes:
+
     print('\nSnake n°', counter + 1, 'appears.')
-    while stopper:
+    while True:
+
         boop = input('Do you want to boop it? Y/N ')
         if boop.lower() in ['yes', 'y', 'ye', 'yy']:
-
             generated_snakes[counter].react(username)
-            stopper = False
-            if username.health <= 0:
-                print('GAME OVER\n', username, 'gained', username.score, 'points.')
+            print('Stats for', username.name,':', username.score, 'points', username.health, 'HP')
+
+            break
+
         elif boop.lower() in ['no', 'n', 'nn']:
-            stopper = False
             print('Žížalka: No pain, no gain. While in a nature is ALWAYS smart to leave snake alone, in this game you dont get anything.')
+            print('Stats for', username.name, ':', username.score, 'points', username.health, 'HP')
+            break
+
+        elif boop == 'exit':
+            print('GAME OVER\n', username.name, 'gained', username.score, 'points.')
+            sys.exit()
+
         else:
-            print('Žížalka: I dont accept different answers then yes or no.')
-        counter += 1
+            print('Žížalka: I dont accept different answers than yes or no.')
+
+    if username.health <= 0:
+        print('GAME OVER\n ', username.name, 'gained', username.score, 'points.')
+        sys.exit()
+
+    counter += 1
+
+
 
 
