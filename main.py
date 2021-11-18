@@ -20,8 +20,7 @@ class Player:
         self.score = self.score + points
 
     def gain_experience(self, exp):
-        #self.experience += exp
-        self.experience = self.experience + exp
+        self.experience += exp
 
     def save_score(self):
         with open('highscore.txt', 'a') as file:
