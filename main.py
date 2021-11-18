@@ -23,9 +23,9 @@ class Player:
         #self.experience += exp
         self.experience = self.experience + exp
 
-    def save_score(self, username, points):
+    def save_score(self):
         with open('highscore.txt', 'a') as file:
-            content = file.write(username.name, points)
+            file.write(f'{self.name} : {self.score}')
 
 class Snake:
     def __init__(self):
@@ -143,17 +143,14 @@ if level == 1:
     generated_snakes = random.choices(all_snakes, k = 5)
 
 counter = 0
-stopper = True
 for snake in generated_snakes:
-
     print('\nSnake n°', counter + 1, 'appears.')
-    while True:
 
+    while True:
         boop = input('Do you want to boop it? Y/N ')
         if boop.lower() in ['yes', 'y', 'ye', 'yy']:
             generated_snakes[counter].react(username)
             print('Stats for', username.name,':', username.score, 'points', username.health, 'HP')
-
             break
 
         elif boop.lower() in ['no', 'n', 'nn']:
@@ -163,13 +160,15 @@ for snake in generated_snakes:
 
         elif boop == 'exit':
             print('GAME OVER\n', username.name, 'gained', username.score, 'points.')
+            username.save_score()
             sys.exit()
 
         else:
-            print('Žížalka: I dont accept different answers than yes or no.')
+            print('Žížalka: I don\'t accept different answers than yes or no.')
 
     if username.health <= 0:
-        print('GAME OVER\n ', username.name, 'gained', username.score, 'points.')
+        print('\nGAME OVER\n' + username.name + ' gained', username.score, 'points.')
+        username.save_score()
         sys.exit()
 
     counter += 1
