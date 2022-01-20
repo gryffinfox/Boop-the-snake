@@ -2,6 +2,8 @@
 
 A game about [booping snakes](https://i.pinimg.com/originals/0c/e9/bd/0ce9bd6f0717f818f2f277187cfca9c7.jpg)
 
+![Boop the snek](https://raw.githubusercontent.com/gryffinfox/Boop-the-snake/89bd3baa4464a0531f90cfb5d92eacacb49790de/extra/boop.webp)
+
 ## About the game
 
 This game reflects my passion for snakes while creatively involving Python OOP.
