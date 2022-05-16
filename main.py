@@ -4,7 +4,7 @@ import sys
 from text import Text
 from player import Player
 from snake import Snake
-from snake import european_snakes
+
 
 ################ GAME ###########################
 
@@ -17,7 +17,8 @@ trip = input('\nWhere do you want to go?\nTrip to Europe (press 1) ')
 while trip not in ["1"]:
     Text.wrong_input()
     trip = input('\nWhere do you want to go?\nTrip to Europe (press 1) ')
-    continue
+
+from snake import european_snakes
 
 generated_snakes = []
 

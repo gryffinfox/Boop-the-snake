@@ -45,39 +45,39 @@ class Snake:
 #### Erycinae Europe, reaction matric [5, 5, 90] ####
 sand_boa = Snake(False, 'Europe', 'Usually burried.', 'The Sand boa - Eryx jaculus', [5, 5, 90])
 sand_boa.codex_entry = ['fact 1', 'fact 2', 'fact 3', 'fact 4']
-european_snakes.append(sand_boa.species)
+european_snakes.append(sand_boa)
 
 #### Colubrid Europe, reaction matrix [30, 40, 30] ####
 cat_snake = Snake(True, 'Europe', 'I am a danger noodle, fear me! SssssSSSSsss',
                   'The Cat snake - Telescopus fallax', [30, 40, 30])
 cat_snake.codex_entry = ['fact 1', 'fact 2', 'fact 3', 'fact 4']
-european_snakes.append(cat_snake.species)
+european_snakes.append(cat_snake)
 
 grass_snake = Snake(False, 'Europe', 'I may looks scary but I am a sweetheart. '
                     'Now give me some fishsssss!', 'The Grass snake - Natrix natrix', [30, 40, 30])
 grass_snake.codex_entry = ['fact 1', 'fact 2', 'fact 3', 'fact 4']
-european_snakes.append(grass_snake.species)
+european_snakes.append(grass_snake)
 
 smooth_snake = Snake(False, 'Europe', 'I an UBS - universal brown snake. Sometimes hisssssss.',
                      'The Smooth snake - Coronella austriaca', [30, 40, 30])
 smooth_snake.codex_entry = ['fact 1', 'fact 2', 'fact 3', 'fact 4']
-european_snakes.append(smooth_snake.species)
+european_snakes.append(smooth_snake)
 
 horseshoe_whip = Snake(False, 'Europe', 'SsssSsspaghetti snek but ok.',
                         'The Horseshoe whip snake - Hemorrhois hippocrepis', [30, 40, 30])
 horseshoe_whip.codex_entry = ['fact 1', 'fact 2', 'fact 3', 'fact 4']
-european_snakes.append(horseshoe_whip.species)
+european_snakes.append(horseshoe_whip)
 
 #### Viper, Europe, reaction matrix [60, 30, 10] #####
 common_adder = Snake(True,'Europe', 'I am a scary snek! SSSSSssssss!', 'The Common adder - Vipera berus', [60, 30, 10])
 common_adder.codex_entry = ['fact 1', 'fact 2', 'fact 3', 'fact 4']
-european_snakes.append(common_adder.species)
+european_snakes.append(common_adder)
 
 asp_viper = Snake(True,'Europe', 'I am a tiny scary snek! Sssss ss s sss', 'The Asp viper - Vipera aspis', [60, 30, 10])
 asp_viper.codex_entry = ['fact 1', 'fact 2', 'fact 3', 'fact 4']
-european_snakes.append(asp_viper.species)
+european_snakes.append(asp_viper)
 
 vipera_renardi = Snake(True,'Europe', 'I can look differently according to the subspecies. Still scary snake! SSSSSSss ss sss!',
                        '\nVipera renardi', [60, 30, 10])
 vipera_renardi.codex_entry = ['fact 1', 'fact 2', 'fact 3', 'fact 4']
-european_snakes.append(vipera_renardi.species)
+european_snakes.append(vipera_renardi)
