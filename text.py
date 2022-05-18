@@ -14,13 +14,13 @@ class Text:
 
     @staticmethod
     def choose_action():                        #Rename
-        print('\nWhat do you want to do?\n'
-                'Boop the snake (press 1)\n'
-                'Observe the snake (press 2)\n'
-                'Search in the codex (press 3)\n'
-                'Guess (press 4)\n'
-                'Leave the snake alone (press 5)\n'
-                'Exit the game (press 6)\n')
+        return '\nWhat do you want to do?\n'\
+                + 'Boop the snake (press 1)\n'\
+                + 'Observe the snake (press 2)\n'\
+                + 'Search in the codex (press 3)\n'\
+                + 'Guess (press 4)\n'\
+                + 'Leave the snake alone (press 5)\n'\
+                + 'Exit the game (press 6)\n'
 
     @staticmethod
     def wrong_input():
