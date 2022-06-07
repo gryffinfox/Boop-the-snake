@@ -2,6 +2,7 @@ import random
 from player import Player
 
 european_snakes = []
+generated_snakes = []
 
 class Snake:
     def __init__(self, venomous, continent, looks, species, reaction_matrix):
