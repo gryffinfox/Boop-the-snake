@@ -1,2 +1,5 @@
 .idea 
 nahradit_while.png
+.vscode/launch.json
+__pycache__/
+highscore.txt
