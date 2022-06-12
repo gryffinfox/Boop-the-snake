@@ -48,8 +48,8 @@ class Narrator:
 
     @staticmethod
     def print_snake_leaving():
-        return 'While you were looking at the snake, he decided to leave and you lost a chance to boop it.'
+        print('While you were looking at the snake, he decided to leave and you lost a chance to boop it.')
 
     @staticmethod
     def leave_snake_alone():
-        return 'Žížalka: No pain, no gain. While in a nature is ALWAYS smart to leave a snake alone, in this game you don\'t get anything.'
+        print('Žížalka: No pain, no gain. While in a nature is ALWAYS smart to leave a snake alone, in this game you don\'t get anything.')
