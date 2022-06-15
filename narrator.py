@@ -26,12 +26,53 @@ class Narrator:
         print('\nŽížalka: Did the cat walk on your keyboard? To go for a trip, '
               'type the number of the trip and press enter.')
 
+    #suggestion for future - customise continent outputs
     @staticmethod
     def print_europe():
         print('Žížalka: Welcome in Europe! '
-            'You will encouter five european snakes a with each you need to decide what you are going to do.'
-            '\nBooping will get you points but it can also cost you lives. Leaving the snake alone (while smart in the nature) doesn\'t give you points but it keeps you healthy.'
+            'You will encouter five european snakes and with each you need to decide what you are going to do.',
+            '\nBooping will get you points but it can also cost you lives.'
+            '\nLeaving the snake alone (while smart in the nature) doesn\'t give you points but it keeps you healthy.',
             '\nGame is over if you run out of lives or if you finish encountering all snakes.')
+
+    @staticmethod
+    def print_north_america():
+        print('Žížalka: Welcome in North America! ',
+            '\nYou will encouter five snakes from North America and with each you need to decide what you are going to do.',
+            '\nBooping will get you points but it can also cost you lives. Leaving the snake alone (while smart in the nature) doesn\'t give you points but it keeps you healthy.',
+            '\nGame is over if you run out of lives or if you finish encountering all snakes.')
+
+    @staticmethod
+    def print_south_america():
+        print('Žížalka: Welcome in South America! '
+              '\nYou will encouter five snakes from South America and with each you need to decide what you are going to do.'
+              '\nBooping will get you points but it can also cost you lives.'
+              '\nLeaving the snake alone (while smart in the nature) doesn\'t give you points but it keeps you healthy.'
+              '\nGame is over if you run out of lives or if you finish encountering all snakes.')
+
+    @staticmethod
+    def print_africa():
+        print('Žížalka: Welcome in Africa! '
+              '\nYou will encouter five snakes from Africa and with each you need to decide what you are going to do.'
+              '\nBooping will get you points but it can also cost you lives. '
+              '\nLeaving the snake alone (while smart in the nature) doesn\'t give you points but it keeps you healthy.'
+              '\nGame is over if you run out of lives or if you finish encountering all snakes.')
+
+    @staticmethod
+    def print_asia():
+        print('Žížalka: Welcome in Asia! '
+              '\nYou will encouter five Asian snakes and with each you need to decide what you are going to do.'
+              '\nBooping will get you points but it can also cost you lives.'
+              '\nLeaving the snake alone (while smart in the nature) doesn\'t give you points but it keeps you healthy.'
+              '\nGame is over if you run out of lives or if you finish encountering all snakes.')
+
+    @staticmethod
+    def print_australia():
+        print('Žížalka: Welcome in Australia! '
+              '\nYou will encouter five Australian snakes and with each you need to decide what you are going to do.'
+              '\nBooping will get you points but it can also cost you lives.'
+              '\nLeaving the snake alone (while smart in the nature) doesn\'t give you points but it keeps you healthy.'
+              '\nGame is over if you run out of lives or if you finish encountering all snakes.')
 
     @staticmethod
     def wrong_input_two():

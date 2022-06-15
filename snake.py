@@ -1,6 +1,6 @@
 import random
 
-european_snakes = []
+loaded_snakes = []
 generated_snakes = []
 
 class Snake:
@@ -10,7 +10,8 @@ class Snake:
         self.continent = continent
         self.codex_entry = codex_entry
         self.looks = looks
-        self.reactions = ['bite', 'hiss', 'coil']           # add flip tongue, yawn, staying still?
+        # add flip tongue, yawn, staying still?
+        self.reactions = ('bite', 'hiss', 'coil')
         self.reaction_matrix = reaction_matrix
 
     def react(self, player):
