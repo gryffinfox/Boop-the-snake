@@ -5,6 +5,8 @@ generated_snakes = []
 
 class Snake:
     def __init__(self, english, latin, venomous, continent, looks, codex_entry, reaction_matrix):
+        self.english = english
+        self.latin = latin
         self.name = english + ' - ' + latin
         self.venomous = venomous
         self.continent = continent

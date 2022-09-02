@@ -1,18 +1,19 @@
-#info on the beggining what should player have installed?
+# info on the beggining what should player have installed?
 
 import csv
-#import time
+# import time
 import random
 import sys
-#from PIL import Image
-#import class_text -> file must be the same name as the class
+# from PIL import Image
+# import class_text -> file must be the same name as the class
 from narrator import Narrator
 from player import Player
 from snake import Snake
 from snake import loaded_snakes
+from guess import play_game
 
 
-#def show_snake():
+# def show_snake():
     #img = Image.open('unicorn.jpeg')
     #img.show()
 
@@ -123,11 +124,39 @@ while playerWantsToPlay:
 
         #Guess the name
         elif choose_action == '4':
-            print('4 - guessing the name')
-            guess = input('Who am I?\n')
-            if generated_snakes[counter].name in guess:
-                print('Žížalka: Bravo!')
+            while True:
+                question = input('Do you want to play a game (1) or guess right away (2)?')
+                if question == '1':
+                    play_game(generated_snakes[counter].name)
+
+                elif question == '2':
+                    break
+                else:
+                    print('Žížalka: Not a valid answer, try again.')
+
+            if generated_snakes[counter].english.lower() == 'No English name'.lower():
+                guess = input('Who am I?\n'
+                              'I only have latin name +20 points\n')
+            else:
+                guess = input('Who am I?\n'
+                          'English name +10 points\n'
+                          'Latin name +20 points\n'
+                          'English - Latin name +50 points\n')
+
+            if generated_snakes[counter].english.lower() == guess.lower():
+                print('Žížalka: Bravo! It is indeed ' + generated_snakes[counter].english + '. Ten points to Slytherin!')
                 player.add_score(10)
+                Narrator.print_stats(player)
+
+            elif generated_snakes[counter].latin.lower() == guess.lower():
+                print('Žížalka: Fortuna fortibus favet! ' + generated_snakes[counter].latin + ' is correct.')
+                player.add_score(20)
+                Narrator.print_stats(player)
+
+            elif generated_snakes[counter].name.lower() == guess.lower():
+                print('Žížalka: You would have knocked the socks off if I had feet! ' + generated_snakes[counter].name +
+                      ' is the full name of this gentlesnake.')
+                player.add_score(50)
                 Narrator.print_stats(player)
 
             elif guess.lower() == 'snake':
