@@ -31,13 +31,13 @@ class Snake:
         player.suffer(damage)
         player.add_score(score)
         print('Snake bit you! You lost', score, 'points and', damage, 'HP.')
-
+    # when nonvenomous/venomous snake hisses, subtract 1 life from player's health bar and add 5 points to player's score
     def hiss(self, player):
         player.suffer(1)
         score = 5
         player.add_score(score)
         print('Snake hissed at you! You gained', score, 'points and lost 1 HP.')
-
+    # when nonvenomous/venomous snake coils, add 10 points to player's score
     def coil(self, player):
         score = 10
         player.add_score(score)

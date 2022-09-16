@@ -93,6 +93,7 @@ while playerWantsToPlay:
     counter = 0
     for snake in generated_snakes:
         print('\nSnake n°', counter + 1, 'appears.')
+        print(generated_snakes[counter].name)
         #show_snake()
 
         #Player chooses what to do
@@ -143,6 +144,7 @@ while playerWantsToPlay:
                           'Latin name +20 points\n'
                           'English - Latin name +50 points\n')
 
+            guessed_snake = '{}'.format(generated_snakes[counter].name.lower())
             if generated_snakes[counter].english.lower() == guess.lower():
                 print('Žížalka: Bravo! It is indeed ' + generated_snakes[counter].english + '. Ten points to Slytherin!')
                 player.add_score(10)
@@ -153,7 +155,8 @@ while playerWantsToPlay:
                 player.add_score(20)
                 Narrator.print_stats(player)
 
-            elif generated_snakes[counter].name.lower() == guess.lower():
+            elif guessed_snake == guess.lower():
+                #generated_snakes[counter].name.lower() == guess.lower():
                 print('Žížalka: You would have knocked the socks off if I had feet! ' + generated_snakes[counter].name +
                       ' is the full name of this gentlesnake.')
                 player.add_score(50)
