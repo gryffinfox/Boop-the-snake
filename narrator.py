@@ -1,6 +1,5 @@
 # Add all the strings
 # Rename the methods
-
 class Narrator:
     @staticmethod
     def print_welcome():
