@@ -1,8 +1,5 @@
 # The hangman game
 # To do:
-# 1. String announcements into one static class -
-# how to predefine string when it is in input() - formated str?
-# can I predefine string when it has also formated str inside it?
 # 2. How to call it in the main.py, is play_game too long?
 # 3. Make it pretty
 # 4. ...
@@ -57,7 +54,7 @@ def print_secret_word(secret_word, guessed_letters, default_letters):
 def is_guess_in_secret_word(guess, secret_word):
     if len(guess) > 1: #or not guess.isalpha():
         Guess.input_one_letter()
-        guess = input('Žížalka: Guess a letter: ')
+        return False
     else:
         if guess in secret_word:
             return True
@@ -74,13 +71,13 @@ def play_game(snake_name):
     secret_word = snake_name.lower()
     # not gonna be in the code later
     print(secret_word)
-    #
     print_secret_word(secret_word, guessed_letters, default_letters)
-
-    while remaining_attempts > 0 and len(guessed_letters) < len(get_unique_letters(secret_word)):
+    # unique letter count is always the same
+    unique_letters_count = len(get_unique_letters(secret_word))
+    while remaining_attempts > 0 and len(guessed_letters) < unique_letters_count:
         guess = input('Žížalka: Guess a letter: ')
-        guess_in_secret_word = is_guess_in_secret_word(guess, secret_word)
 
+        guess_in_secret_word = is_guess_in_secret_word(guess, secret_word)
         if guess_in_secret_word:
             if guess in guessed_letters:
                 print('Žížalka: You have already guessed the letter {}'.format(guess))
